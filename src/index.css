@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f8fafc;
+}
+
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.map-frame {
+  min-height: 620px;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #e2e8f0;
+  box-shadow: 0 18px 45px rgba(8, 38, 63, 0.1);
+}
+
+.map-frame-crisis {
+  border-color: #fed7aa;
+  box-shadow: 0 18px 45px rgba(194, 65, 12, 0.14);
+}
+
+.leaflet-container {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 16px 35px rgba(8, 38, 63, 0.18);
+}
+
+.leaflet-popup-content {
+  margin: 14px;
+}
+
+.kb-marker-shell {
+  border: 0;
+  background: transparent;
+}
+
+.kb-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+}
+
+.kb-marker-resource {
+  width: 34px;
+  height: 34px;
+}
+
+.kb-marker-generator {
+  background: #08263f;
+  color: #ffffff;
+}
+
+.kb-marker-solar {
+  background: #f59e0b;
+  color: #1f2937;
+}
+
+.kb-marker-battery {
+  background: #15803d;
+  color: #ffffff;
+}
+
+.kb-marker-reserved {
+  outline: 3px solid rgba(245, 158, 11, 0.45);
+}
+
+.kb-marker-unavailable {
+  opacity: 0.48;
+  filter: grayscale(0.35);
+}
+
+.kb-marker-selected {
+  transform: scale(1.18);
+  z-index: 999;
+  box-shadow:
+    0 0 0 4px rgba(21, 128, 61, 0.2),
+    0 10px 22px rgba(15, 23, 42, 0.25);
+}
+
+.kb-marker-crisis.kb-marker-available {
+  box-shadow:
+    0 0 0 3px rgba(245, 158, 11, 0.24),
+    0 10px 22px rgba(15, 23, 42, 0.25);
+}
+
+.kb-marker-need {
+  width: 36px;
+  height: 36px;
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.kb-marker-need-crisis {
+  width: 42px;
+  height: 42px;
+  animation: kb-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes kb-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(220, 38, 38, 0.32),
+      0 8px 18px rgba(15, 23, 42, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(220, 38, 38, 0),
+      0 8px 18px rgba(15, 23, 42, 0.25);
+  }
+}
